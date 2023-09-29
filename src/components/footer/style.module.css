@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (width > 750px) {
+  .footer {
+    width: 750px;
+    margin: 0 auto;
+  }
+}
