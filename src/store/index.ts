@@ -10,11 +10,13 @@ import {
 
 import { useDispatch } from 'react-redux'
 
-import { exampleModel } from './features'
+import { authModel, usersModel, currentUserModel } from './features'
 
 export const store = configureStore({
   reducer: combineReducers({
-    example: exampleModel.reducer,
+    auth: authModel.reducer,
+    users: usersModel.reducer,
+    currenUser: currentUserModel.reducer,
   }),
 })
 
@@ -25,23 +27,3 @@ export type AppThunkDispatch = ThunkDispatch<
   unknown,
   AnyAction
 >
-
-export const useAppDispatch = () => useDispatch<AppDispatch>()
-
-export const createAppThunk = <Returned = void, ThunkArg = void>(
-  typePrefix: string,
-  payloadCreator: AsyncThunkPayloadCreator<
-    Returned,
-    ThunkArg,
-    { state: RootState }
-  >,
-  options?:
-    | AsyncThunkOptions<ThunkArg, { state: RootState }>
-    | undefined
-) => {
-  return createAsyncThunk<Returned, ThunkArg, { state: RootState }>(
-    typePrefix,
-    payloadCreator,
-    options
-  )
-}

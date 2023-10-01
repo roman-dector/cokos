@@ -1,0 +1,13 @@
+.header {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: end;
+
+  background: #090f1f;
+  max-height: 200px;
+  border-radius: 0px 0px 20px 20px;
+  width: 100%;
+
+  color: white;
+}

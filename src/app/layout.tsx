@@ -2,8 +2,11 @@
 
 import style from './styles/style.module.css'
 import './styles/global.css'
-import Provider from './providers'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
+import { Provider } from 'react-redux'
+import { store } from '@/store'
+import { authModel } from '@/store/features'
+import { useAppDispatch } from '@/store/utils'
 
 export default function RootLayout(props: { children: ReactNode }) {
   return (
@@ -11,7 +14,7 @@ export default function RootLayout(props: { children: ReactNode }) {
       <link rel='manifest' href='/manifest.json'></link>
       <link rel='apple-touch-icon' href='/icon.png'></link>
       <body className={style.rootLayout}>
-        <Provider>{props.children}</Provider>
+        <Provider store={store}>{props.children}</Provider>
       </body>
     </html>
   )

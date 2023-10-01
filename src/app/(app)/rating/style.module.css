@@ -1,0 +1,18 @@
+.ratingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--light-gray);
+
+  font-size: medium;
+  padding: 6px 12px;
+
+  border-radius: 8px;
+}
+
+.ratingItem div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
